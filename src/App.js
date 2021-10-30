@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home/Home';
+import ServiceAdd from './components/SeviceAdd/ServiceAdd';
 
 function App() {
   return (
@@ -17,9 +18,13 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
+              <Home></Home>
             </Route>
             <Route exact path="/home">
               <Home></Home>
+            </Route>
+            <Route exact path="/addService">
+              <ServiceAdd></ServiceAdd>
             </Route>
             <Route exact path="/login">
               <Login></Login>
