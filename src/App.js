@@ -12,6 +12,7 @@ import ServiceAdd from './components/SeviceAdd/ServiceAdd';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import BookingService from './components/BookingService/BookingService';
 import ManageBookings from './components/ManageBookings/ManageBookings';
+import MyBookings from './components/MyBookings/MyBookings';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageBookings">
               <ManageBookings></ManageBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
             </PrivateRoute>
 
             <Route path="*">
