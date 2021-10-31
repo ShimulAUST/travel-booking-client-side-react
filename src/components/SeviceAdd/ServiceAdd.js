@@ -19,11 +19,11 @@ const ServiceAdd = () => {
         <div className="add-service">
             <h2>Add New Service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name", { required: true, maxLength: 30 })} placeholder="Name" />
-                <textarea {...register("description")} placeholder="Description" />
-                <input type="number" {...register("price")} placeholder="Price" />
-                <input {...register("img")} placeholder="image url" />
-                <input type="submit" />
+                <input {...register("name", { required: true, maxLength: 30 })} placeholder="Name" className="form-control" />
+                <textarea {...register("description")} placeholder="Description" className="form-control" />
+                <input type="number" {...register("price")} placeholder="Price" className="form-control" />
+                <input {...register("img")} placeholder="image url" className="form-control" />
+                <input className="btn btn-success btn-block form control" type="submit" />
             </form>
         </div>
     );

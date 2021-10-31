@@ -5,6 +5,7 @@
     align-items: center;
 }
 .add-service form input,textarea{
-    width: 40%;
+    width: 60%;
     margin-bottom: 10px;
 }
+.form-control { width: 60%; }

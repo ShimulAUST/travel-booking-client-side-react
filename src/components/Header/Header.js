@@ -19,8 +19,7 @@ const Header = () => {
                         <Nav.Link as={NavLink} to="/teams">Our Team</Nav.Link>
                         <Nav.Link as={NavLink} to="/booking">Booking</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#contact">Contact Us</Nav.Link>
-                        {user.email ?
-                            <Button onClick={logOut} variant="light">Log Out</Button> :
+                        {user.email ? '' :
                             <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
                         }
                         {
@@ -35,6 +34,7 @@ const Header = () => {
                                             <Dropdown.Item as={NavLink} to="/myBookings">My Bookings</Dropdown.Item>
                                             <Dropdown.Item as={NavLink} to="/manageBookings">Manage Bookings</Dropdown.Item>
                                             <Dropdown.Item as={NavLink} to="/addService">Add Service</Dropdown.Item>
+                                            <Dropdown.Item onClick={logOut} >Log Out</Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
 
