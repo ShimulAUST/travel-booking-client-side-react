@@ -1,0 +1,10 @@
+.book-service form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.book-service form input,textarea{
+    width: 60%;
+    margin-bottom: 10px;
+}

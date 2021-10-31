@@ -9,6 +9,9 @@ import Login from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home/Home';
 import ServiceAdd from './components/SeviceAdd/ServiceAdd';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import BookingService from './components/BookingService/BookingService';
+import ManageBookings from './components/ManageBookings/ManageBookings';
 
 function App() {
   return (
@@ -29,6 +32,13 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/booking/:_id">
+              <BookingService></BookingService>
+            </PrivateRoute>
+            <PrivateRoute path="/manageBookings">
+              <ManageBookings></ManageBookings>
+            </PrivateRoute>
+
             <Route path="*">
               <NotFound></NotFound>
             </Route>

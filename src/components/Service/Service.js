@@ -3,7 +3,7 @@ import { Card, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { name, image, id, description, price } = service;
+    const { name, image, _id, description, price } = service;
     return (
         <div className="col-md-4 g-5">
             <CardGroup className="h-100">
@@ -18,7 +18,9 @@ const Service = ({ service }) => {
 
                     </Card.Body>
                     <Card.Footer style={{ backgroundColor: "white" }}>
-                        <Link className="btn btn-warning form-control btn-block" to={`detailService/${id}`}>Book Now</Link>
+                        <Link to={`/booking/${_id}`}>
+                            <button className="btn btn-warning btn-block form-control">Book Now</button>
+                        </Link>
                     </Card.Footer>
                 </Card>
 
