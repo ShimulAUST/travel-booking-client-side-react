@@ -42,7 +42,7 @@ const BookingService = () => {
                                         <Card.Title>{service.name}</Card.Title>
                                         <Card.Text>
                                             {service.description}
-                                            <h3>৳ {service.price}</h3>
+                                            <p><b>৳ {service.price}</b></p>
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -59,10 +59,10 @@ const BookingService = () => {
                         <h2>Details</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <input {...register("serviceId", { required: true, maxLength: 30 })} value={service._id} hidden />
-                            <input {...register("name", { required: true, maxLength: 30 })} value={user.displayName} />
-                            <input {...register("email", { required: true, maxLength: 30 })} value={user.email} />
-                            <input {...register("status", { required: true, maxLength: 30 })} value="pending" readOnly />
+                            <input {...register("serviceId")} value={service._id || ''} readOnly hidden />
+                            <input {...register("name", { required: true, maxLength: 30 })} value={user.displayName || ''} />
+                            <input {...register("email", { required: true, maxLength: 30 })} value={user.email || ''} />
+                            <input {...register("status")} value="pending" readOnly />
                             <input {...register("phone", { required: true, maxLength: 30 })} placeholder="Enter your phone number" />
                             <textarea {...register("address")} placeholder="Enter your address" />
                             <input className="btn btn-success btn-block form-control" type="submit" />

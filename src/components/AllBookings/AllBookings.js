@@ -10,27 +10,56 @@ const AllBookings = () => {
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);
+    let count = 1;
+    const handleDelete = id => {
+        const url = `https://blooming-sands-68806.herokuapp.com/orders/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    alert("successfully Deleted");
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                }
 
+            })
+    }
     return (
-        <div>
-            <Table striped bordered hover size="sm">
+        <div className="mt-2">
+            <h3>All Orders</h3>
+            <Table striped bordered hover size="sm" responsive>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Serial No</th>
+                        <th>Order Id</th>
+                        <th>Sevice Id</th>
+                        <th>Customer Name</th>
+                        <th>Customer Email</th>
+                        <th>Customer Phone</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
+
                         orders.map(order => <tr key={order._id}>
+                            <td>{count++}</td>
+                            <td>{order._id}</td>
                             <td>{order.serviceId}</td>
                             <td>{order.name}</td>
                             <td>{order.email}</td>
                             <td>{order.phone}</td>
                             <td>{order.address}</td>
-                            <td><button>Delete</button></td>
+                            <td>{order.status}</td>
+                            <td> <button className="btn btn-info btn-block form-control">Update</button><br />
+                                <button className="btn btn-danger btn-block form-control mt-2" onClick={() => handleDelete(order._id)}>Delete</button>
+
+                            </td>
 
                         </tr>)
                     }
